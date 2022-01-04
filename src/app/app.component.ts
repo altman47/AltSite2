@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AltSite2';
+  isLoggedIn: boolean = false;
 }

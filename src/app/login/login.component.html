@@ -1,0 +1,25 @@
+<div *ngIf="isLoggedIn; else showLogin">
+    <button (click)="logout()">
+        Logout
+    </button>      
+</div>
+<ng-template #showLogin>
+    <div>
+        <div class="container color-dark" *ngIf="buttonPressed && !isLoggedIn; else showButton">
+            <form #loginForm = "ngForm" (ngSubmit)="validateUser(loginForm)">
+                <label for="username">Username</label>
+                <input name="username" id="username" type="text" ngModel>
+                <label for="password">Password</label>
+                <input name="password" id="password" type="password" ngModel>
+                <button type="submit">Login</button>
+
+            </form>
+
+        </div>
+        <ng-template #showButton>
+            <button (click)="wantsLogin()">
+                Login
+            </button>      
+        </ng-template>
+    </div>
+</ng-template>

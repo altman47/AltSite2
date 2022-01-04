@@ -7,6 +7,13 @@
   </li>
 </ul>
 
-<app-home></app-home>
+<app-login [(isLoggedIn)]="isLoggedIn" ></app-login>
+
+
+<app-answers *ngIf="isLoggedIn; else showHome"></app-answers>
+<ng-template #showHome>
+  <app-home></app-home>
+</ng-template>
+
 
 <router-outlet></router-outlet>
